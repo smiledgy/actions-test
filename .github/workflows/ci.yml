@@ -9,13 +9,12 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
-    - name: setup-node
-      uses: actions/setup-node@v2
+    - name: install Node.js
+      uses: actions/setup-node@v2.5.0
+      with:
+        node-version: "14.X"
     - name: Install and Build
-    - run: ｜
-        npm install 
-        npm run build
-
+    - run: npm install && npm run build
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4.2.5
       with:

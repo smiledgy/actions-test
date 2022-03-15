@@ -9,11 +9,12 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
+    - name: Install and Build
+      uses: npm install && npm run build
 
-    - name: buildAndDeploy
+    - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4.2.5
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: dist
-        BUILD_SCRIPT: npm install && npm run build
+      with:
+        token: ${{ secrets.ACCESS_TOKEN }}
+        branch: gh-pages
+        folder: dist

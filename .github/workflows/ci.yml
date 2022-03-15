@@ -10,7 +10,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
     - name: Install and Build
-      uses: ｜
+      run: ｜
         npm install 
         npm run build
 

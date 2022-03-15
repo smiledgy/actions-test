@@ -9,9 +9,11 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
-    - name: Install and Build
+    - name: setup-node
       uses: actions/setup-node@v2
-      run: ｜
+      with: node-version: '14'
+    - name: Install and Build
+    - run: ｜
         npm install 
         npm run build
 
